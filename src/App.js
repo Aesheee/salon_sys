@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RegistrationForm from './RegistrationForm';
 import HomePage from './HomePage';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import ServicesPage from './ServicesPage';
+import ProfilePage from './ProfilePage';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
+  const [selectedServices, setSelectedServices] = useState([]);
+
   return (
-    <Router>
     <Routes>
       <Route path="/" element={<RegistrationForm />} />
       <Route path="/homepage" element={<HomePage />} />
+      <Route path="/services" element={<ServicesPage selectedServices={selectedServices} setSelectedServices={setSelectedServices} />} />
+      <Route path="/profile" element={<ProfilePage selectedServices={selectedServices} />} />
     </Routes>
-    </Router>
   );
 }
 
