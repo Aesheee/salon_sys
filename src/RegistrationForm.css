@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(Honor-Magic-V-Flip-Stock-Wallpaper-.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.366);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    width: 400px; /* Adjust this width as necessary */
+    padding: 20px;
+    display: flex; /* Changed display to flex */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+button {
+    background-image: linear-gradient(to bottom right, #cb9909, #3e1b18);
+    width: 100%;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+    background-image: linear-gradient(to bottom right, #3e1b18, #cb9909);
+}
+
+.toggle-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.toggle-link button {
+    border: none;
+    background: none;
+    color: #cb9909;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.toggle-link button:hover {
+    text-decoration: underline;
+}

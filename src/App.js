@@ -1,16 +1,16 @@
-
-
 import React from 'react';
-import './App.css';
 import RegistrationForm from './RegistrationForm';
-
-
+import HomePage from './HomePage';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <RegistrationForm />
-    </div>
+    <Router>
+    <Routes>
+      <Route path="/" element={<RegistrationForm />} />
+      <Route path="/homepage" element={<HomePage />} />
+    </Routes>
+    </Router>
   );
 }
 
