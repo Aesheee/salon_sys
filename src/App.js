@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import RegistrationForm from './RegistrationForm';
+import './RegistrationForm.css';
+
 import HomePage from './HomePage';
 import ServicesPage from './ServicesPage';
 import ProfilePage from './ProfilePage';

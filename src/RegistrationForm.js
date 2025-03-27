@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from './Honor-Magic-V-Flip-Stock-Wallpaper-.jpg';
 
 const RegistrationForm = () => {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ const RegistrationForm = () => {
   const [loginData, setLoginData] = useState({ username: '', password: '' });
   const [isRegistered, setIsRegistered] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  const [userId, setUserId] = useState(null);
+
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -38,7 +37,7 @@ const RegistrationForm = () => {
 
     if (response.ok) {
       const data = await response.json();
-      setUserId(data.userId);
+
       setIsRegistered(true);
       setIsLogin(false);
       navigate('/homepage'); // navigate to lowercase homepage
@@ -60,7 +59,7 @@ const RegistrationForm = () => {
 
     if (response.ok) {
       const data = await response.json();
-      setUserId(data.userId);
+
       setIsLogin(true);
       alert('Login successful! Welcome back.');
       navigate('/homepage');
@@ -76,20 +75,19 @@ const RegistrationForm = () => {
     setIsRegistered(false);
   };
 
-  const styles = {
-    body: {
-      fontFamily: 'Arial, sans-serif',
-      backgroundImage: `url(${backgroundImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      color: '#333',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-      margin: '0',
-    },
-    container: {
+    const styles = {
+      container: {
+        background: 'rgba(255, 255, 255, 0.366)',
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        borderRadius: '20px',
+        width: '400px',
+        padding: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      },
+
+    Container: {
       background: 'rgba(255, 255, 255, 0.366)',
       boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
       borderRadius: '20px',
@@ -141,7 +139,8 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div className="container">
+
       {isLoading && <p>Loading...</p>} {/* Loading state indicator */}
       {!isRegistered && !isLogin && (
         <div>
