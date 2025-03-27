@@ -38,6 +38,24 @@ app.post('/register', (req, res) => {
   });
 });
 
+app.post('/login', (req, res) => {
+  const { username, password } = req.body; // Get username and password from the request body
+
+  const query = `SELECT * FROM customer_info WHERE username = ? AND password = ?`;
+
+  db.query(query, [username, password], (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    if (results.length > 0) {
+      const user = results[0];
+      return res.json({ userId: user.id }); // Send userId from database back to frontend
+    } else {
+      return res.status(401).json({ message: 'Invalid username or password' });
+    }
+  });
+});
+
 app.get('/services/:category', (req, res) => {
   const category = req.params.category;
   const query = `
@@ -51,6 +69,14 @@ app.get('/services/:category', (req, res) => {
       return res.status(500).json({ error: err.message });
     }
     res.json(results);
+  });
+});
+
+app.get('/api/services', (req, res) => {
+  const sql = 'SELECT * FROM services_info';
+  db.query(sql, (err, results) => {
+    if (err) return res.status(500).send(err);
+    res.send(results);
   });
 });
 
