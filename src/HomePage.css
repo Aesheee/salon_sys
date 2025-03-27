@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(homepagegirl.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    height: 100vh;
+    margin: 0;
+}
+
+
+button{
+    width: 20%;
+}

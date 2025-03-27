@@ -72,6 +72,14 @@ app.get('/services/:category', (req, res) => {
   });
 });
 
+app.get('/api/services', (req, res) => {
+  const sql = 'SELECT * FROM services_info';
+  db.query(sql, (err, results) => {
+    if (err) return res.status(500).send(err);
+    res.send(results);
+  });
+});
+
 app.post('/transactions', (req, res) => {
   const { userId, serviceId, total } = req.body;
   const query = `INSERT INTO transactions (user_id, services_id, total, status) VALUES (?, ?, ?, ?)`;
